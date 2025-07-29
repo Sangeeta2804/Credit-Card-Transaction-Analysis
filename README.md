@@ -1,6 +1,6 @@
-**#Credit Card Transaction Analysis-Power**
+**Credit Card Transaction Analysis-Power**
 
-**##Project objective**
+**Project objective**
 
 To develop a comprehensive credit
 card weekly dashboard that
@@ -10,7 +10,7 @@ enabling stakeholders to monitor
 and analyze credit card operations
 effectively
 
-**##Data from SQL**
+**Data from SQL**
 
 (i) Prepare csv file
 (ii)Create tables in SQL
@@ -52,7 +52,7 @@ effectively
  ALL('public cc_detail'),
  'public cc_detail'[week_num2] = MAX('public cc_detail'[week_num2])-1))
 
-**#Dashboard & insights**
+**Dashboard & insights**
 
 Overview YTD:
 • Overall revenue is 55M

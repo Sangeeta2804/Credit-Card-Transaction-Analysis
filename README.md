@@ -18,7 +18,7 @@ effectively
 
 #Data processing & DAX
 
-(i)AgeGroup = SWITCH(
+(i) AgeGroup = SWITCH(
  TRUE(),
  'public cust_detail'[customer_age] < 30, "20-30",
  'public cust_detail'[customer_age] >= 30 && 'public cust_detail'[customer_age] < 40, "30-40",
@@ -28,7 +28,7 @@ effectively
  "unknown"
  )
 
-(ii)IncomeGroup = SWITCH(
+(ii) IncomeGroup = SWITCH(
  TRUE(),
  'public cust_detail'[income] < 35000, "Low",
  'public cust_detail'[income] >= 35000 && 'public cust_detail'[income] <70000, "Med",
@@ -36,16 +36,17 @@ effectively
  "unknown"
 )
 
-(iii)week_num2 = WEEKNUM('public cc_detail'[week_start_date])
-Revenue = 'public cc_detail'[annual_fees] + 'public cc_detail'[total_trans_amt] + 'public cc_detail'[interest_earned]
+(iii) week_num2 = WEEKNUM('public cc_detail'[week_start_date])
 
-(iv)Current_week_Reveneue = CALCULATE(
+(iv) Revenue = 'public cc_detail'[annual_fees] + 'public cc_detail'[total_trans_amt] + 'public cc_detail'[interest_earned]
+
+(iv) Current_week_Reveneue = CALCULATE(
  SUM('public cc_detail'[Revenue]),
  FILTER(
  ALL('public cc_detail'),
  'public cc_detail'[week_num2] = MAX('public cc_detail'[week_num2])))
 
-(v)Previous_week_Reveneue = CALCULATE(
+(v) Previous_week_Reveneue = CALCULATE(
  SUM('public cc_detail'[Revenue]),
  FILTER(
  ALL('public cc_detail'),
